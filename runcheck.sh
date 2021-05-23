@@ -37,16 +37,16 @@ echo '"expire": "'$expire'",' >> ./tmp/${1}.json
 echo '"issuer": "'$issuer'",' >> ./tmp/${1}.json
 
 if [ $expirestamp \< $nowstamp ]; then
-    echo '"status": "Expired",' >> ./tmp/${1}.json
+    echo '"status": "失效",' >> ./tmp/${1}.json
     echo '"statuscolor": "error",' >> ./tmp/${1}.json
 elif [ $expireday \< 10 ]; then
-    echo '"status": "Soon Expired",' >> ./tmp/${1}.json
+    echo '"status": "即将失效",' >> ./tmp/${1}.json
     echo '"statuscolor": "warning",' >> ./tmp/${1}.json
 elif [ $status = "ok." ]; then
-    echo '"status": "Valid",' >> ./tmp/${1}.json
+    echo '"status": "有效",' >> ./tmp/${1}.json
     echo '"statuscolor": "success",' >> ./tmp/${1}.json
 else
-    echo '"status": "Invalid",' >> ./tmp/${1}.json
+    echo '"status": "无效",' >> ./tmp/${1}.json
     echo '"statuscolor": "error",' >> ./tmp/${1}.json
 fi
 
