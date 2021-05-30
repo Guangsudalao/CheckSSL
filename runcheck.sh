@@ -39,7 +39,7 @@ echo '"issuer": "'$issuer'",' >> ./tmp/${1}.json
 if [ $expirestamp \< $nowstamp ]; then
     echo '"status": "失效",' >> ./tmp/${1}.json
     echo '"statuscolor": "error",' >> ./tmp/${1}.json
-elif [ $expireday \< 10 ]; then
+elif [ $expireday \< 15 ]; then
     echo '"status": "即将失效",' >> ./tmp/${1}.json
     echo '"statuscolor": "warning",' >> ./tmp/${1}.json
 elif [ $status = "ok." ]; then
